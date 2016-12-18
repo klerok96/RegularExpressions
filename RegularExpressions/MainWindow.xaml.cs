@@ -28,7 +28,7 @@ namespace RegularExpressions
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            string pattern = @"^\d(\+|-)\d\*i$";
+            string pattern = @"^[0-9]{6}$";
             string text = textBox.Text;
 
             if (Regex.IsMatch(text, pattern))
