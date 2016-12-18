@@ -28,10 +28,13 @@ namespace RegularExpressions
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            string pattern = @"^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$";
-            string text = textBox.Text;
+            string pattern = @"^[A-Z][a-z]*$";
 
-            if (Regex.IsMatch(text, pattern))
+            string text_f = textBox.Text;
+            string text_i = textBox1.Text;
+            string text_o = textBox2.Text;
+
+            if (Regex.IsMatch(text_f, pattern) && Regex.IsMatch(text_i, pattern) && Regex.IsMatch(text_o, pattern))
             {
                 MessageBox.Show("Верно");
             }
