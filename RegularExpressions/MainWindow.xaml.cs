@@ -28,13 +28,11 @@ namespace RegularExpressions
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            string pattern = @"^[A-Z][a-z]*$";
+            string pattern = @"^[0-9]{11}$";
 
-            string text_f = textBox.Text;
-            string text_i = textBox1.Text;
-            string text_o = textBox2.Text;
+            string text = textBox.Text;
 
-            if (Regex.IsMatch(text_f, pattern) && Regex.IsMatch(text_i, pattern) && Regex.IsMatch(text_o, pattern))
+            if (Regex.IsMatch(text, pattern))
             {
                 MessageBox.Show("Верно");
             }
