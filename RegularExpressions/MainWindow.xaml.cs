@@ -28,17 +28,17 @@ namespace RegularExpressions
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            string pattern = @"^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.(ru)$";
+            string pattern = @"\w*(жы|шы|чя|щя|чю|щю)\w*";
 
             string text = textBox.Text;
 
             if (Regex.IsMatch(text, pattern))
             {
-                MessageBox.Show("Верно");
+                MessageBox.Show("Не верно");
             }
             else
             {
-                MessageBox.Show("Не верно");
+                MessageBox.Show("Верно");
             }
         }
 
