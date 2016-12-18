@@ -28,7 +28,7 @@ namespace RegularExpressions
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            string pattern = @"^<html>(\s*\w*\s*)*</html>$";
+            string pattern = @"^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$";
             string text = textBox.Text;
 
             if (Regex.IsMatch(text, pattern))
