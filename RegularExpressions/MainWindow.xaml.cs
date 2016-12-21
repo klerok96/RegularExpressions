@@ -28,17 +28,20 @@ namespace RegularExpressions
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            string pattern = @"^<html>(\s*\w*\s*)*</html>$";
             string text = textBox.Text;
 
-            if (Regex.IsMatch(text, pattern))
+            string pattern = @"(\b\w+)\s+\1";
+
+            while (Regex.IsMatch(text, pattern))
             {
-                MessageBox.Show("Верно");
+                foreach (Match match in Regex.Matches(text, pattern, RegexOptions.IgnoreCase))
+                {
+                    string replacement1 = match.Groups[1].Value;
+
+                    text = Regex.Replace(text, match.Value, replacement1);
+                }
             }
-            else
-            {
-                MessageBox.Show("Не верно");
-            }
+            MessageBox.Show(text);
         }
 
         private void Window_KeyUp(object sender, KeyEventArgs e)
